@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+</head>
+<body>
+<h1>首页</h1>
+<a th:href="@{/target}">访问目标页面target.html</a><br/>
+<form th:action="@{/target}" method="post">
+    <input type="submit">
+</form>
+<a th:href="@{/test}">test页面</a><br/>
+
+<a th:href="@{/target(username='admin', password=123456)}">测试@RequestMapping的params属性-->/mytarget</a><br/>
+
+<form th:action="@{/testPut}" method="get">
+    <input type="submit" value="测试form表单是否能够发送put或者delete请求">
+</form>
+<br/>
+
+<a th:href="@{/a1a/testAnt}">测试@RequestMapping注解可以匹配ant风格的路径--->使用？</a><br/>
+<a th:href="@{/a1a/testAnt}">测试@RequestMapping注解可以匹配ant风格的路径--->使用*</a><br/>
+<a th:href="@{/a1a/testAnt}">测试@RequestMapping注解可以匹配ant风格的路径--->使用**</a><br/>
+
+<a th:href="@{/testPath/1/admin}">测试路径中的占位符-->/testRest</a><br>
+</body>
+</html>
